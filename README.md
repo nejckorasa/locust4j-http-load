@@ -9,8 +9,8 @@ Inspired by/based on [locust4j-http](https://github.com/myzhan/locust4j-http)
 It acts as Locust slave that connect to master Locust instance.
 You can run master using scripts in [dist](https://github.com/nejckorasa/locust4j-http-load/tree/master/dist) directory:
 
-- `start-locust-web.sh` runs Locust master with web interface
-- `start-locust.sh` runs Locust master without in no-web mode
+- [start-locust-web.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/dist/start-locust-web.sh) runs Locust master with web interface
+- [start-locust.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/dist/start-locust.sh) runs Locust master without in no-web mode
 
 See the scripts for more configuration options.
 
