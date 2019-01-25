@@ -4,11 +4,16 @@ An example project for http load testing using [locust4j](https://github.com/myz
 
 Inspired by/based on [locust4j-http](https://github.com/myzhan/locust4j-http)
 
-## Run 
+## Run
 
-It acts as Locust slave that connect to master Locust instance.
+App acts as Locust slave that connects to Locust master, hence you need to also run master.
 
-### Bash
+### Run slave
+
+- build and package with Maven (`mvn package`)
+- run jar
+
+### Run master (Bash)
 
 You can run master using bash scripts in [master-bash](https://github.com/nejckorasa/locust4j-http-load/tree/master/master-bash) directory.
 
@@ -17,7 +22,7 @@ You can run master using bash scripts in [master-bash](https://github.com/nejcko
 
 See the scripts for more configuration options.
 
-### Docker
+### Run master (Docker)
 
 Run Locust master in Docker, see [master-docker](https://github.com/nejckorasa/locust4j-http-load/tree/master/master-docker) directory.
 
