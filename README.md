@@ -4,12 +4,11 @@ An example project for http load testing using [locust4j](https://github.com/myz
 
 Inspired by/based on [locust4j-http](https://github.com/myzhan/locust4j-http)
 
-### Run 
+## Run 
 
 It acts as Locust slave that connect to master Locust instance.
-<<<<<<< HEAD
 
-#### Bash
+### Bash
 
 You can run master using bash scripts in [master-bash](https://github.com/nejckorasa/locust4j-http-load/tree/master/master-bash) directory.
 
@@ -18,7 +17,7 @@ You can run master using bash scripts in [master-bash](https://github.com/nejcko
 
 See the scripts for more configuration options.
 
-#### Docker
+### Docker
 
 Run Locust master in Docker, see [master-docker](https://github.com/nejckorasa/locust4j-http-load/tree/master/master-docker) directory.
 
@@ -48,6 +47,6 @@ $ docker run --rm --name master-locust -p 8089:8089 -p 5557:5557 -p 5558:5558 -v
     --csv-base-name=example
 ```
 
-### Write your own task objects
+## Write your own task objects
 
 See [GetExampleTask](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/kotlin/io/github/nejckorasa/locust4j/http/task/GetExampleTask.kt) and [PostExampleTask](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/kotlin/io/github/nejckorasa/locust4j/http/task/PostExampleTask.kt) for examples
