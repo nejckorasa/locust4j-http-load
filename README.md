@@ -7,19 +7,20 @@ Inspired by/based on [locust4j-http](https://github.com/myzhan/locust4j-http)
 ### Run 
 
 It acts as Locust slave that connect to master Locust instance.
+<<<<<<< HEAD
 
 #### Bash
 
-You can run master using bash scripts in [master-bash](https://github.com/nejckorasa/locust4j-http-load/tree/master/locust4j-http-load/master-bash) directory.
+You can run master using bash scripts in [master-bash](https://github.com/nejckorasa/locust4j-http-load/tree/master/master-bash) directory.
 
-- `start-locust-web.sh` runs Locust master with web interface
-- `start-locust.sh` runs Locust master without in no-web mode
+- [start-locust-web.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/dist/start-locust-web.sh) runs Locust master with web interface
+- [start-locust.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/dist/start-locust.sh) runs Locust master without in no-web mode
 
 See the scripts for more configuration options.
 
 #### Docker
 
-Run Locust master in Docker, see [master-docker](https://github.com/nejckorasa/locust4j-http-load/tree/master/locust4j-http-load/master-docker) directory.
+Run Locust master in Docker, see [master-docker](https://github.com/nejckorasa/locust4j-http-load/tree/master/master-docker) directory.
 
 Build image:
 ```
@@ -49,4 +50,4 @@ $ docker run --rm --name master-locust -p 8089:8089 -p 5557:5557 -p 5558:5558 -v
 
 ### Write your own task objects
 
-See `GetExampleTask` and `PostExampleTask` for examples
+See [GetExampleTask](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/kotlin/io/github/nejckorasa/locust4j/http/task/GetExampleTask.kt) and [PostExampleTask](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/kotlin/io/github/nejckorasa/locust4j/http/task/PostExampleTask.kt) for examples
