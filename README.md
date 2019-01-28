@@ -1,3 +1,5 @@
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)]( https://twitter.com/home?status=Great%20%23Locust4j%20http%20load%20test%20example%20in%20%23Java%20and%20%23Kotlin%20https%3A//github.com/nejckorasa/locust4j-http-load%20%23github%20%23code%20%23development%20%23developers%20%23programming%20%23programmers%20%23testing%20%23software%20%23developing%20via%20%40nejckorasa)
+
 # Locust4j http load
 
 An example project for http load testing using [locust4j](https://github.com/myzhan/locust4j), written in Java and Kotlin.
