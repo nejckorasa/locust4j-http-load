@@ -8,14 +8,22 @@ This is not a library of any sort, just an example on how to use Locust and Locu
 
 Inspired by/based on [locust4j-http](https://github.com/myzhan/locust4j-http)
 
-## Run
+## Build & Run
 
 App acts as Locust slave that connects to Locust master, hence you need to also run master.
 
 ### Run slave
 
-- Build and package with Maven (`mvn package`)
-- Run jar (`java -jar locust4j-load-http-1.0-SNAPSHOT-fat.jar`)
+- Build and package with Maven:
+```
+$ git clone https://github.com/nejckorasa/locust4j-http-load
+$ cd locust4j-http-load
+$ mvn package
+```
+- Run jar:
+```
+$ java -jar locust4j-load-http-1.0-SNAPSHOT-fat.jar
+```
 
 Jar accepts arguments to configure Locust, see [ConfigurationContext](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/java/io/github/nejckorasa/locust4j/http/config/ConfigurationContext.java). 
 
