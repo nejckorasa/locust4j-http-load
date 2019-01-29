@@ -5,7 +5,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 /**
- * Creates and holds singelton instance of CloseableHttpClient
+ * Creates and holds singleton instance of CloseableHttpClient
  */
 public class HttpClientSingleton {
 

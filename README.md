@@ -4,6 +4,8 @@
 
 An example project for http load testing using [locust4j](https://github.com/myzhan/locust4j), written in Java and Kotlin.
 
+This is not a library of any sort, just an example on how to use Locust and Locust4j to write load tests for more complex scenarios (dependent subsequent requests, ...)
+
 Inspired by/based on [locust4j-http](https://github.com/myzhan/locust4j-http)
 
 ## Run
@@ -12,8 +14,10 @@ App acts as Locust slave that connects to Locust master, hence you need to also 
 
 ### Run slave
 
-- build and package with Maven (`mvn package`)
-- run jar
+- Build and package with Maven (`mvn package`)
+- Run jar (`java -jar locust4j-load-http-1.0-SNAPSHOT-fat.jar`)
+
+Jar accepts arguments to configure Locust, see [ConfigurationContext](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/java/io/github/nejckorasa/locust4j/http/config/ConfigurationContext.java). 
 
 ### Run master (Bash)
 
@@ -57,3 +61,9 @@ $ docker run --rm --name master-locust -p 8089:8089 -p 5557:5557 -p 5558:5558 -v
 ## Write your own task objects
 
 See [GetExampleTask](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/kotlin/io/github/nejckorasa/locust4j/http/task/GetExampleTask.kt) and [PostExampleTask](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/kotlin/io/github/nejckorasa/locust4j/http/task/PostExampleTask.kt) for examples
+
+
+## Http
+
+Http requests are made using [HttpRequests](https://github.com/nejckorasa/locust4j-http-load/blob/master/src/main/kotlin/io/github/nejckorasa/locust4j/http/HttpRequests.kt), with options to record or not record the request with Locust.
+
