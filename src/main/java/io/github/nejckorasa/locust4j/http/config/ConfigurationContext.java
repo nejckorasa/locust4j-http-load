@@ -24,10 +24,11 @@ public class ConfigurationContext {
     }
 
     final Options options = new Options();
-    options.addOption("masterHost", true, "Locust master host, defaults to 127.0.0.1");
-    options.addOption("masterPort", true, "Locust master port, defaults to 5557");
-    options.addOption("maxRPS", true, "Max RPS that can generate, disabled by default");
-    options.addOption("baseUrl", true, "Base URL like http://127.0.0.1:8080/");
+    options.addOption("mh", "masterHost", true, "Locust master host, defaults to 127.0.0.1");
+    options.addOption("mp", "masterPort", true, "Locust master port, defaults to 5557");
+    options.addOption("rps", "maxRPS", true, "Max RPS that can generate, disabled by default");
+    options.addOption("bu", "baseUrl", true, "Base URL like http://127.0.0.1:8080/, defaults to null");
+    options.addOption("dr", "dryRun", false, "Performs dry run, defaults to false");
 
     final CommandLineParser parser = new DefaultParser();
     final CommandLine cmd = parser.parse(options, args, false);
@@ -42,6 +43,9 @@ public class ConfigurationContext {
     }
     if (cmd.hasOption("maxRPS")) {
       configuration.setMaxRPS(Integer.valueOf(cmd.getOptionValue("maxRPS")));
+    }
+    if (cmd.hasOption("dryRun")) {
+      configuration.setDryRun(true);
     }
 
     configuration.setBaseUrl(cmd.getOptionValue("baseUrl"));

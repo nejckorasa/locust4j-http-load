@@ -22,7 +22,7 @@ public class Main {
     try {
       ConfigurationContext.init(args);
 
-      // override options here
+      // override options here - should remove this when executing jar
 
       ConfigurationContext.getConfiguration().setBaseUrl("http://localhost:7778/rest/");
       ConfigurationContext.getConfiguration().setMasterPort(5557);
@@ -38,8 +38,8 @@ public class Main {
     locust.setMasterHost(ConfigurationContext.getConfiguration().getMasterHost());
     locust.setMasterPort(ConfigurationContext.getConfiguration().getMasterPort());
 
+    // enable max RPS control
     if (ConfigurationContext.getConfiguration().getMaxRPS() > 0) {
-      // enable max RPS control
       locust.setMaxRPS(ConfigurationContext.getConfiguration().getMaxRPS());
     }
 
@@ -51,15 +51,21 @@ public class Main {
         new PostExampleTask(5, "538743855")
     };
 
-    logger.info("Running tasks \n" + Arrays.stream(tasks)
-        .map(t -> "(" + t.getWeight() + ", " + t.getName() + ") \n")
-        .collect(Collectors.joining("[", ",", "]")));
+    printTasks(tasks);
 
     if (ConfigurationContext.getConfiguration().isDryRun()) {
+      logger.info("Dry running...");
       locust.dryRun(tasks);
     }
     else {
       locust.run(tasks);
     }
+  }
+
+  private static void printTasks(final AbstractTask[] tasks)
+  {
+    logger.info("Running tasks \n" + Arrays.stream(tasks)
+        .map(t -> "(" + t.getWeight() + ", " + t.getName() + ") \n")
+        .collect(Collectors.joining("[", ",", "]")));
   }
 }
