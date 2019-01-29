@@ -24,7 +24,7 @@ open class GetExampleTask(private val weight: Int, private val userId: String) :
                 .build())
 
         // make request and record to Locust
-        val (stringResponse, statusCode) = HttpRequests.executeAndRecord(httpGet, name)
+        val (stringResponse, statusCode) = HttpRequests.executeAndRecord(httpGet, name, 200)
 
         if (statusCode == 200) {
             // do stuff

@@ -28,9 +28,9 @@ open class PostExampleTask(private val weight: Int, private val userId: String) 
         form.add(BasicNameValuePair("largeJsonParam", getLargeJsonParam()))
 
         // make request and record to Locust
-        val (stringResponse, statusCode) = HttpRequests.executeAndRecord(httpPost, name)
+        val (stringResponse, statusCode) = HttpRequests.executeAndRecord(httpPost, name, 201)
 
-        if (statusCode == 200) {
+        if (statusCode == 201) {
             // do stuff
         }
 

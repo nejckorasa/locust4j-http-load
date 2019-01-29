@@ -23,9 +23,24 @@ class HttpRequests {
         val objectMapper: ObjectMapper = ObjectMapper()
 
         /**
-         * Execute http call and record it to Locust
+         * Execute http call and record it to Locust. Request is considered successful if it's status code equals successStatusCode
          */
-        fun executeAndRecord(requestBase: HttpRequestBase, name: String): Pair<String?, Int?> {
+        fun executeAndRecord(requestBase: HttpRequestBase, name: String, successStatusCode: Int): Pair<String?, Int?> =
+                executeAndRecord(requestBase, name) { statusCode, _ -> statusCode == successStatusCode }
+
+        /**
+         * Execute http call and record it to Locust. Request is considered successful if it's status code is contained in successStatusCodes
+         */
+        fun executeAndRecord(requestBase: HttpRequestBase, name: String, successStatusCodes: List<Int>): Pair<String?, Int?> =
+                executeAndRecord(requestBase, name) { statusCode, _ -> successStatusCodes.contains(statusCode) }
+
+        /**
+         * Execute http call and record it to Locust. Request is considered successful if isSuccess returns True
+         */
+        fun executeAndRecord(
+                requestBase: HttpRequestBase,
+                name: String,
+                isSuccess: (statusCode: Int?, stringResponse: String?) -> Boolean): Pair<String?, Int?> {
 
             val sw = Stopwatch.createStarted()
             var entity: HttpEntity?
@@ -39,7 +54,7 @@ class HttpRequests {
                     entity = response.entity
                     stringResponse = EntityUtils.toString(entity)
 
-                    if (statusCode == 200) {
+                    if (isSuccess(statusCode, stringResponse)) {
                         Locust.getInstance().recordSuccess("http", name, sw.stop().elapsed(TimeUnit.MILLISECONDS), response.entity.contentLength)
                     } else {
                         Locust.getInstance().recordFailure("http", name, sw.stop().elapsed(TimeUnit.MILLISECONDS), stringResponse)
