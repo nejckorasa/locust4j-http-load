@@ -31,8 +31,8 @@ Jar accepts arguments to configure Locust, see [ConfigurationContext](https://gi
 
 You can run master using bash scripts in [master-bash](https://github.com/nejckorasa/locust4j-http-load/tree/master/master-bash) directory.
 
-- [start-locust-web.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/dist/start-locust-web.sh) runs Locust master with web interface
-- [start-locust.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/dist/start-locust.sh) runs Locust master without in no-web mode
+- [start-locust-web.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/master-bash/start-locust-web.sh) runs Locust master with web interface
+- [start-locust.sh](https://github.com/nejckorasa/locust4j-http-load/blob/master/master-bash/start-locust.sh) runs Locust master without in no-web mode
 
 See the scripts for more configuration options.
 
