@@ -12,7 +12,7 @@
         <locust4j.version>1.0.4</locust4j.version>
         <commons-cli.version>1.4</commons-cli.version>
         <httpclient.version>4.5.13</httpclient.version>
-        <log4j-core.version>2.15.0</log4j-core.version>
+        <log4j-core.version>2.16.0</log4j-core.version>
         <guava.version>29.0-jre</guava.version>
         <jackson-databind.version>2.10.0.pr1</jackson-databind.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
